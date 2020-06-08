@@ -1,0 +1,5 @@
+---
+- name: adding ip address to the bridge
+  routeros_command:
+    commands:
+        - /ip address add interface=LAN address={{ gwip }}

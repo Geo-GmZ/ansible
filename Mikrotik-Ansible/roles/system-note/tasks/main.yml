@@ -1,0 +1,6 @@
+---
+### Set system note
+
+- name: Set System Note
+  routeros_command:
+    commands: "/system note set note=\"{{ system_note }}\""

@@ -1,0 +1,9 @@
+---
+- name: Disabling services
+  routeros_command:
+    commands:
+       - /ip service set telnet disabled=yes
+       - /ip service set ftp disabled=yes
+       - /ip service set www disabled=yes
+       - /ip service set api disabled=yes
+       - /ip service set api-ssl disabled=yes

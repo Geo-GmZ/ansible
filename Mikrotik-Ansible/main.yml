@@ -1,0 +1,34 @@
+- hosts: mikrotik
+  connection: network_cli
+  gather_facts: no
+  strategy: free
+  vars:
+   dns1: 8.8.8.8 ### Set DNS1
+   dns2: 8.8.4.4 ### Set DNS2
+   dns_static: 192.168.25.1 ### Router DNS record
+   dns_name: router.lan.net ### set DNS record for router
+   local_net: 192.168.25.0/24 ### set local network
+   gwip: 192.168.25.1/24 ### Set Def GW IP for LAN 
+   admin_passwd: M1kr0t1k_01 ### Must uncomment lines below
+   system_note:  Administrators Only! Access Is Monitored please disconnect inmeddiately if you're no authorized
+
+
+  roles:
+    - ntp-roles
+    - disable-service
+    - create-lan-bridge
+    - system-note
+    - set-lan-gw-ip
+    - set-dns
+    - create-int-list
+    - set-nat
+
+  tasks:
+   
+ ## - name: securing admin user
+ ##   routeros_command:
+ ##     commands:
+ ##       - /user set address={{ local_net }} comment="system default user" group=full name=admin numbers=0
+ ##       - /user set password={{ admin_passwd }} name=admin numbers=0
+
+  

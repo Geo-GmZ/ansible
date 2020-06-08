@@ -1,0 +1,6 @@
+---
+- name: configure WAN interfaces
+  routeros_command:
+    commands:
+       - /interface list add name=WAN
+       - /interface list member add interface=ether1 list=WAN

@@ -1,0 +1,9 @@
+---
+- name: create bridge LAN and add ports
+  routeros_command:
+    commands:
+        - /interface bridge add name=LAN
+        - /interface bridge port add bridge=LAN interface=ether2
+        - /interface bridge port add bridge=LAN interface=ether3
+        - /interface bridge port add bridge=LAN interface=ether4
+        - /interface bridge port add bridge=LAN interface=ether5

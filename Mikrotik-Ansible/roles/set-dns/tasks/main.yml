@@ -1,0 +1,6 @@
+---
+- name: add DNS servers to routerOS
+  routeros_command:
+    commands:
+        - /ip dns set allow-remote-requests=yes servers={{ dns1 }},{{ dns2 }}
+        - /ip dns static add address={{ dns_static }} name={{ dns_name }}

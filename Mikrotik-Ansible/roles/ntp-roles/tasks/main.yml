@@ -1,0 +1,5 @@
+---
+- name: set NTP servers
+  routeros_command:
+    commands:
+        - /system ntp client set enabled=yes server-dns-name=0.north-america.pool.ntp.org,1.north-america.pool.ntp.org,2.north-america.pool.ntp.org

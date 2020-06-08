@@ -1,0 +1,15 @@
+[mikrotik]
+### set your devices IPs e.g:
+#192.168.10.1 
+#192.168.10.2
+#192.168.10.3
+192.168.10.13
+
+[mikrotik:vars]
+###Set vars for SSH connection with Ansible and Router
+ansible_user=admin
+ansible_password=''
+ansible_network_os=routeros
+ansible_connection=network_cli
+ansible_host_key_checking = false
+

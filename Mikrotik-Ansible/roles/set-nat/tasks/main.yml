@@ -1,0 +1,5 @@
+---
+- name: configuring NAT
+  routeros_command:
+    commands:
+       - /ip firewall nat add action=masquerade chain=srcnat out-interface-list=WAN
